@@ -6,29 +6,29 @@ Un outil automatique pour créer et configurer des environnements virtuels Pytho
 [![Platform](https://img.shields.io/badge/Platform-Windows-blue.svg)](https://microsoft.com/windows)
 [![Python](https://img.shields.io/badge/Python-3.6%2B-green.svg)](https://python.org)
 
-## 🎯 Fonctionnalités
+##  Fonctionnalités
 
-### ✨ Détection Automatique
+###  Détection Automatique
 - **Analyse intelligente** des imports dans vos fichiers Python
 - **Détection Azure** : `azure-identity`, `azure-mgmt-resourcegraph` 
 - **Détection Data Science** : `pandas`, `numpy`, `matplotlib`
 - **Détection Web** : `flask`, `django`, `fastapi`
 - **Extensible** : Facile d'ajouter de nouvelles bibliothèques
 
-### 🛠️ Configuration Complète
+###  Configuration Complète
 - **Environnement virtuel** isolé dans `env/`
 - **Installation automatique** des dépendances détectées
 - **requirements.txt** généré automatiquement
 - **activate.bat** pour activation en un clic
 - **.gitignore** configuré automatiquement
 
-### 🧠 Gestion Intelligente
+###  Gestion Intelligente
 - **Détection d'environnement existant** avec option de recréation
 - **Mise à jour pip** automatique
 - **Confirmation utilisateur** avant installation
 - **Messages clairs** et informatifs
 
-## 🚀 Installation
+##  Installation
 
 ### Méthode 1: Téléchargement Direct
 ```bash
@@ -42,7 +42,7 @@ cd my-dev-tools/bootstrap-tools/python-env-configurator
 copy setup_env.bat C:\votre\projet\
 ```
 
-## 📖 Guide d'Utilisation
+##  Guide d'Utilisation
 
 ### Utilisation Basique
 
@@ -82,13 +82,13 @@ import pandas as pd
 # Résultat :
 my_azure_project/
 ├── azure_script.py
-├── activate.bat          # ⭐ Script d'activation
-├── requirements.txt      # ⭐ Dépendances installées
-├── .gitignore           # ⭐ Configuration Git
-└── env/                 # ⭐ Environnement isolé
+├── activate.bat          #  Script d'activation
+├── requirements.txt      #  Dépendances installées
+├── .gitignore           #  Configuration Git
+└── env/                 #  Environnement isolé
 ```
 
-## 🎨 Exemples par Type de Projet
+##  Exemples par Type de Projet
 
 ### Projet Azure Security
 ```python
@@ -98,9 +98,9 @@ from azure.mgmt.resourcegraph import ResourceGraphClient
 import pandas as pd
 
 # Détection automatique :
-# ✅ azure-identity
-# ✅ azure-mgmt-resourcegraph
-# ✅ pandas
+#  azure-identity
+#  azure-mgmt-resourcegraph
+#  pandas
 ```
 
 ### Projet Data Science
@@ -111,9 +111,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Détection automatique :
-# ✅ pandas
-# ✅ numpy  
-# ✅ matplotlib
+#  pandas
+#  numpy  
+#  matplotlib
 ```
 
 ### Projet Web API
@@ -123,11 +123,11 @@ from flask import Flask, request
 import requests
 
 # Détection automatique :
-# ✅ flask
-# ✅ requests
+#  flask
+#  requests
 ```
 
-## ⚙️ Configuration Avancée
+##  Configuration Avancée
 
 ### Ajouter une Nouvelle Détection
 
@@ -153,13 +153,13 @@ REM Personnaliser le nom du projet
 echo Activation environnement: MonProjet
 ```
 
-## 📁 Structure Après Configuration
+##  Structure Après Configuration
 
 ```
 votre-projet/
 ├── votre_script.py          # Vos fichiers Python
 ├── setup_env.bat            # Configurateur (supprimable après usage)
-├── activate.bat             # Script d'activation ⭐
+├── activate.bat             # Script d'activation 
 ├── requirements.txt         # Liste des dépendances
 ├── .gitignore              # Exclusions Git
 └── env/                    # Environnement virtuel isolé
@@ -198,7 +198,7 @@ pip install --upgrade nom_package
 pip freeze > requirements.txt
 ```
 
-## 🔍 Résolution de Problèmes
+##  Résolution de Problèmes
 
 ### Erreur "Python non trouvé"
 ```bash
@@ -232,7 +232,7 @@ setup_env.bat
 # Le script cherche : "import module" et "from module"
 ```
 
-## 📚 Commandes Utiles
+##  Commandes Utiles
 
 ### Gestion de l'Environnement
 ```bash
@@ -255,7 +255,7 @@ del requirements.txt            # Supprimer les dépendances
 setup_env.bat                   # Recréer l'environnement
 ```
 
-## 🤝 Contribution
+##  Contribution
 
 Les améliorations sont les bienvenues ! Pour contribuer :
 
