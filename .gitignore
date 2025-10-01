@@ -1,0 +1,43 @@
+# Python environments
+env/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temporary files
+*.log
+logs/
+temp/
+tmp/
+*.tmp
+
+# Secrets and local configuration
+.env
+.env.local
+secrets/
+config/local_*
+credentials/
+
+# Archives and builds
+*.zip
+*.tar.gz
+dist/
+build/
+
+# Azure specific
+azure_final_report_*.html
