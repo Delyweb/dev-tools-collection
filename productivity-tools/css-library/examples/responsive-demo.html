@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThemeCT - Responsive Layout Demo</title>
+    <link rel="stylesheet" href="../styles/themeCT.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .viewport-info {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background: rgba(34, 145, 116, 0.9);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            z-index: 1000;
+            min-width: 120px;
+            text-align: center;
+        }
+        .demo-info {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+        }
+        .breakpoint-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .breakpoint-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .breakpoint-card.active {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 15px rgba(34, 145, 116, 0.3);
+        }
+        .mobile-features {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .mobile-features {
+                display: block;
+                background: rgba(243, 156, 18, 0.1);
+                padding: 15px;
+                border-radius: 8px;
+                margin: 20px 0;
+                border-left: 4px solid #f39c12;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Viewport Info Display -->
+    <div class="viewport-info" id="viewportInfo">
+        <div id="screenSize">Loading...</div>
+        <div id="breakpoint">Desktop</div>
+    </div>
+
+    <!-- Header Banner -->
+    <header class="header-banner">
+        <div>
+            <div>
+                <img src="https://via.placeholder.com/60x40/ffffff/229174?text=RWD" alt="Responsive Logo" class="responsive-img">
+            </div>
+            <div>
+                <h1>Responsive Design</h1>
+                <p>ThemeCT framework adapts to all screen sizes</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item">
+                    <a href="#intro" class="sidebar-nav-link active">
+                        <i class="fas fa-home"></i> Introduction
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#breakpoints" class="sidebar-nav-link">
+                        <i class="fas fa-mobile-alt"></i> Breakpoints
+                        <span class="toggle-btn">▼</span>
+                    </a>
+                    <ul class="sidebar-subnav">
+                        <li><a href="#desktop" class="sidebar-subnav-link">Desktop (1200px+)</a></li>
+                        <li><a href="#tablet" class="sidebar-subnav-link">Tablet (768px-1199px)</a></li>
+                        <li><a href="#mobile" class="sidebar-subnav-link">Mobile (≤767px)</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#components" class="sidebar-nav-link">
+                        <i class="fas fa-th-large"></i> Components
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#test" class="sidebar-nav-link">
+                        <i class="fas fa-vial"></i> Test Area
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="content">
+                    <!-- Introduction Section -->
+                    <section id="intro">
+                        <h1 class="welcome-title">Responsive Design Demo</h1>
+                        <p class="intro-text">
+                            Test the responsiveness of ThemeCT framework by resizing your browser window or viewing on different devices.
+                            The layout automatically adapts to provide the best user experience on all screen sizes.
+                        </p>
+
+                        <div class="demo-info">
+                            <h4><i class="fas fa-info-circle"></i> How to Test</h4>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-desktop"></i> <strong>Desktop:</strong> Resize your browser window</li>
+                                <li><i class="fas fa-tablet-alt"></i> <strong>Tablet:</strong> Use browser's device emulation</li>
+                                <li><i class="fas fa-mobile"></i> <strong>Mobile:</strong> Open on your phone or use DevTools</li>
+                                <li><i class="fas fa-eye"></i> <strong>Watch:</strong> The viewport info box shows current breakpoint</li>
+                            </ul>
+                        </div>
+
+                        <!-- Mobile-only features notice -->
+                        <div class="mobile-features">
+                            <h4><i class="fas fa-mobile-alt"></i> Mobile Features Active</h4>
+                            <p>You're viewing the mobile version! Try these features:</p>
+                            <ul>
+                                <li>Tap the menu button (☰) to open navigation</li>
+                                <li>Cards stack vertically for better readability</li>
+                                <li>Touch-friendly button sizes</li>
+                                <li>Optimized spacing and typography</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <div class="divider"></div>
+
+                    <!-- Breakpoints Section -->
+                    <section id="breakpoints">
+                        <h2 class="section-title">Responsive Breakpoints</h2>
+                        <p>ThemeCT uses a mobile-first approach with the following breakpoints:</p>
+
+                        <div class="breakpoint-demo">
+                            <div class="breakpoint-card" data-breakpoint="desktop">
+                                <h4><i class="fas fa-desktop"></i> Desktop</h4>
+                                <p><strong>1200px+</strong></p>
+                                <p>Full layout with sidebar and optimal spacing</p>
+                            </div>
+                            <div class="breakpoint-card" data-breakpoint="laptop">
+                                <h4><i class="fas fa-laptop"></i> Laptop</h4>
+                                <p><strong>993px - 1199px</strong></p>
+                                <p>Compact layout with adjusted margins</p>
+                            </div>
+                            <div class="breakpoint-card" data-breakpoint="tablet">
+                                <h4><i class="fas fa-tablet-alt"></i> Tablet</h4>
+                                <p><strong>769px - 992px</strong></p>
+                                <p>Medium layout with responsive grid</p>
+                            </div>
+                            <div class="breakpoint-card" data-breakpoint="mobile">
+                                <h4><i class="fas fa-mobile-alt"></i> Mobile</h4>
+                                <p><strong>≤ 768px</strong></p>
+                                <p>Stack layout with mobile navigation</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="divider"></div>
+
+                    <!-- Components Section -->
+                    <section id="components">
+                        <h2 class="section-title">Responsive Components</h2>
+                        
+                        <h3>Adaptive Grid</h3>
+                        <p>Grid automatically adjusts columns based on screen size:</p>
+                        <div class="responsive-grid">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                                    <h4 class="card-title">Auto Grid</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>Automatically fits available space with minimum 250px width.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                                    <h4 class="card-title">Mobile First</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>Single column on mobile, multiple columns on larger screens.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-icon"><i class="fas fa-cogs"></i></div>
+                                    <h4 class="card-title">Flexible</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>Smooth transitions between different layouts.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Flexible Layout</h3>
+                        <p>Flex containers that wrap gracefully:</p>
+                        <div class="responsive-flex">
+                            <div class="responsive-flex-item">
+                                <div class="card card-primary">
+                                    <div class="card-body">
+                                        <h4>Flex Item 1</h4>
+                                        <p>Equal width distribution that wraps on small screens.</p>
+                                        <a href="#" class="btn btn-sm">Action</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="responsive-flex-item">
+                                <div class="card card-secondary">
+                                    <div class="card-body">
+                                        <h4>Flex Item 2</h4>
+                                        <p>Maintains minimum width of 300px before wrapping.</p>
+                                        <a href="#" class="btn btn-outline btn-sm">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="responsive-flex-item">
+                                <div class="card card-warning">
+                                    <div class="card-body">
+                                        <h4>Flex Item 3</h4>
+                                        <p>Perfect for feature showcases and content blocks.</p>
+                                        <a href="#" class="green-button">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Modern Cards</h3>
+                        <div class="side-by-side-cards">
+                            <div class="modern-card">
+                                <div class="modern-card-halo-1"></div>
+                                <div class="modern-card-halo-2"></div>
+                                <div class="modern-card-header">
+                                    <div class="modern-card-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h3 class="modern-card-title">Performance</h3>
+                                </div>
+                                <div class="modern-card-content">
+                                    <p>Optimized CSS with hardware acceleration for smooth animations on all devices.</p>
+                                </div>
+                            </div>
+
+                            <div class="modern-card">
+                                <div class="modern-card-halo-1"></div>
+                                <div class="modern-card-halo-2"></div>
+                                <div class="modern-card-header">
+                                    <div class="modern-card-icon">
+                                        <i class="fas fa-universal-access"></i>
+                                    </div>
+                                    <h3 class="modern-card-title">Accessibility</h3>
+                                </div>
+                                <div class="modern-card-content">
+                                    <p>Built with accessibility in mind, ensuring usability across all devices and assistive technologies.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="divider"></div>
+
+                    <!-- Test Section -->
+                    <section id="test">
+                        <h2 class="section-title">Interactive Test Area</h2>
+                        <p>Try these interactive elements to see how they adapt:</p>
+
+                        <div class="responsive-container">
+                            <h4>Button Test</h4>
+                            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin: 15px 0;">
+                                <a href="#" class="btn" onclick="showAlert('Primary button clicked!')">
+                                    <i class="fas fa-click"></i> Primary
+                                </a>
+                                <a href="#" class="btn btn-outline" onclick="showAlert('Outline button clicked!')">
+                                    <i class="fas fa-hand-pointer"></i> Outline
+                                </a>
+                                <a href="#" class="green-button" onclick="showAlert('Professional button clicked!')">
+                                    <i class="fas fa-thumbs-up"></i> Professional
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="responsive-container">
+                            <h4>Badge Test</h4>
+                            <div style="margin: 15px 0;">
+                                <span class="badge badge-primary">Responsive</span>
+                                <span class="badge badge-secondary">Modern</span>
+                                <span class="badge badge-warning">Mobile-Ready</span>
+                                <span class="classification-public">Accessible</span>
+                                <span class="incident-severity severity-low">Optimized</span>
+                            </div>
+                        </div>
+
+                        <div class="responsive-container">
+                            <h4>Typography Scale</h4>
+                            <h1>Heading 1 - Responsive</h1>
+                            <h2>Heading 2 - Scales Down</h2>
+                            <h3>Heading 3 - Mobile Friendly</h3>
+                            <p>Paragraph text with optimal line length and spacing that adjusts for readability on all screen sizes.</p>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <span><i class="fas fa-question-circle"></i> Responsive Accordion</span>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    <p>This accordion component works perfectly on all devices. The touch targets are optimized for mobile use, and the content adapts to different screen sizes.</p>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> Touch-friendly on mobile</li>
+                                        <li><i class="fas fa-check"></i> Smooth animations</li>
+                                        <li><i class="fas fa-check"></i> Accessible keyboard navigation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="menu-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <script>
+        // Update viewport info
+        function updateViewportInfo() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            
+            document.getElementById('screenSize').textContent = `${width} × ${height}`;
+            
+            let breakpoint = 'Desktop';
+            let activeCard = 'desktop';
+            
+            if (width <= 768) {
+                breakpoint = 'Mobile';
+                activeCard = 'mobile';
+            } else if (width <= 992) {
+                breakpoint = 'Tablet';
+                activeCard = 'tablet';
+            } else if (width <= 1199) {
+                breakpoint = 'Laptop';
+                activeCard = 'laptop';
+            }
+            
+            document.getElementById('breakpoint').textContent = breakpoint;
+            
+            // Update active breakpoint card
+            document.querySelectorAll('.breakpoint-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            const activeElement = document.querySelector(`[data-breakpoint="${activeCard}"]`);
+            if (activeElement) {
+                activeElement.classList.add('active');
+            }
+        }
+
+        // Sidebar functionality
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const content = item.querySelector('.accordion-content');
+            
+            item.classList.toggle('active');
+            
+            if (item.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                content.style.maxHeight = '0';
+            }
+        }
+
+        // Alert function for demo
+        function showAlert(message) {
+            alert(message + '\n\nCurrent viewport: ' + window.innerWidth + 'px width');
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.sidebar-nav-link, .sidebar-subnav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                        
+                        // Close sidebar on mobile
+                        if (window.innerWidth <= 768) {
+                            document.querySelector('.sidebar').classList.remove('active');
+                        }
+                    }
+                }
+            });
+        });
+
+        // Handle sidebar subnav toggles
+        document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.nextElementSibling && this.nextElementSibling.classList.contains('sidebar-subnav')) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    parent.classList.toggle('open');
+                }
+            });
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const sidebar = document.querySelector('.sidebar');
+            const toggle = document.querySelector('.menu-toggle');
+            
+            if (window.innerWidth <= 768 && 
+                !sidebar.contains(event.target) && 
+                !toggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+
+        // Initialize and update on resize
+        updateViewportInfo();
+        window.addEventListener('resize', updateViewportInfo);
+
+        // Show initial breakpoint
+        setTimeout(() => {
+            updateViewportInfo();
+        }, 500);
+    </script>
+</body>
+</html>

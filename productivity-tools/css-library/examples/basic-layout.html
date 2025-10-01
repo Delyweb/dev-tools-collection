@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThemeCT - Basic Layout Example</title>
+    <link rel="stylesheet" href="../styles/themeCT.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Banner -->
+    <header class="header-banner">
+        <div>
+            <div>
+                <img src="https://via.placeholder.com/60x40/ffffff/229174?text=LOGO" alt="Logo" class="responsive-img">
+            </div>
+            <div>
+                <h1>Professional Dashboard</h1>
+                <p>Modern web interface with ThemeCT framework</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item">
+                    <a href="#" class="sidebar-nav-link active">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#" class="sidebar-nav-link">
+                        <i class="fas fa-chart-bar"></i> Analytics
+                        <span class="toggle-btn">▼</span>
+                    </a>
+                    <ul class="sidebar-subnav">
+                        <li><a href="#" class="sidebar-subnav-link">Overview</a></li>
+                        <li><a href="#" class="sidebar-subnav-link">Reports</a></li>
+                        <li><a href="#" class="sidebar-subnav-link">Trends</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#" class="sidebar-nav-link">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="content">
+                    <h1 class="welcome-title">Welcome to ThemeCT</h1>
+                    <p class="intro-text">
+                        This is a basic layout example showcasing the main components of the ThemeCT framework.
+                        The theme provides a complete design system for building modern web interfaces.
+                    </p>
+
+                    <div class="divider"></div>
+
+                    <!-- Sample Cards -->
+                    <div class="responsive-grid">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4 class="card-title">Features</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Professional design system with modern components and responsive layout.</p>
+                                <a href="#" class="btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h4 class="card-title">Customization</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Easy to customize with CSS variables and modular component system.</p>
+                                <a href="#" class="btn btn-outline">
+                                    <i class="fas fa-edit"></i>
+                                    Customize
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="card card-warning">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h4 class="card-title">Responsive</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>Mobile-first design that works perfectly on all device sizes.</p>
+                                <a href="#" class="green-button">
+                                    <i class="fas fa-device"></i>
+                                    View Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="menu-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <script>
+        // Simple sidebar toggle for mobile
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const sidebar = document.querySelector('.sidebar');
+            const toggle = document.querySelector('.menu-toggle');
+            
+            if (window.innerWidth <= 768 && 
+                !sidebar.contains(event.target) && 
+                !toggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+
+        // Handle sidebar subnav toggles
+        document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.nextElementSibling && this.nextElementSibling.classList.contains('sidebar-subnav')) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    parent.classList.toggle('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

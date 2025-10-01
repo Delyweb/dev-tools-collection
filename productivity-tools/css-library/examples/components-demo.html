@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThemeCT - Components Showcase</title>
+    <link rel="stylesheet" href="../styles/themeCT.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .demo-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .demo-title {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--color-primary-light);
+            padding-bottom: 10px;
+        }
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Banner -->
+    <header class="header-banner">
+        <div>
+            <div>
+                <img src="https://via.placeholder.com/60x40/ffffff/229174?text=DEMO" alt="Demo Logo" class="responsive-img">
+            </div>
+            <div>
+                <h1>ThemeCT Components</h1>
+                <p>Complete showcase of available components and styles</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-item">
+                    <a href="#cards" class="sidebar-nav-link">
+                        <i class="fas fa-layer-group"></i> Cards
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#buttons" class="sidebar-nav-link">
+                        <i class="fas fa-mouse-pointer"></i> Buttons
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#badges" class="sidebar-nav-link">
+                        <i class="fas fa-tags"></i> Badges
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#grid" class="sidebar-nav-link">
+                        <i class="fas fa-th"></i> Grid System
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#typography" class="sidebar-nav-link">
+                        <i class="fas fa-font"></i> Typography
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="content">
+                    <!-- Cards Section -->
+                    <section id="cards" class="demo-section">
+                        <h2 class="demo-title">Card Components</h2>
+                        
+                        <h3>Modern Cards</h3>
+                        <div class="component-grid">
+                            <div class="modern-card">
+                                <div class="modern-card-halo-1"></div>
+                                <div class="modern-card-halo-2"></div>
+                                <div class="modern-card-header">
+                                    <div class="modern-card-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h3 class="modern-card-title">Modern Design</h3>
+                                </div>
+                                <div class="modern-card-content">
+                                    <p>This is a modern card with subtle gradients and hover effects. Perfect for showcasing features or important content.</p>
+                                </div>
+                            </div>
+
+                            <div class="modern-card">
+                                <div class="modern-card-halo-1"></div>
+                                <div class="modern-card-halo-2"></div>
+                                <div class="modern-card-header">
+                                    <div class="modern-card-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h3 class="modern-card-title">Secure & Reliable</h3>
+                                </div>
+                                <div class="modern-card-content">
+                                    <p>Built with modern CSS techniques and best practices for performance and accessibility.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Standard Cards</h3>
+                        <div class="component-grid">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <div class="card-icon">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
+                                    <h4 class="card-title">Primary Card</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>Primary styled card with professional appearance.</p>
+                                </div>
+                            </div>
+
+                            <div class="card card-secondary">
+                                <div class="card-header">
+                                    <div class="card-icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <h4 class="card-title">Secondary Card</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>Secondary styled card for supporting content.</p>
+                                </div>
+                            </div>
+
+                            <div class="card card-warning">
+                                <div class="card-header">
+                                    <div class="card-icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <h4 class="card-title">Warning Card</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>Warning styled card for important notices.</p>
+                                </div>
+                            </div>
+
+                            <div class="card card-danger">
+                                <div class="card-header">
+                                    <div class="card-icon">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                    <h4 class="card-title">Danger Card</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>Danger styled card for critical alerts.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Gradient Cards</h3>
+                        <div class="component-grid">
+                            <div class="card card-gradient">
+                                <div class="card-header">
+                                    <div class="card-icon">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <h4 class="card-title">Gradient Card</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>Beautiful gradient background for special content.</p>
+                                </div>
+                            </div>
+
+                            <div class="card card-gradient-green">
+                                <div class="card-header">
+                                    <div class="card-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <h4 class="card-title">Success Card</h4>
+                                </div>
+                                <div class="card-body">
+                                    <p>Green gradient for success messages and positive actions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Buttons Section -->
+                    <section id="buttons" class="demo-section">
+                        <h2 class="demo-title">Button Components</h2>
+                        
+                        <h3>Primary Buttons</h3>
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap; margin: 20px 0;">
+                            <a href="#" class="btn">
+                                <i class="fas fa-download"></i>
+                                Download
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fas fa-edit"></i>
+                                Edit
+                            </a>
+                            <a href="#" class="btn btn-sm">
+                                <i class="fas fa-save"></i>
+                                Save
+                            </a>
+                        </div>
+
+                        <h3>Professional Buttons</h3>
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap; margin: 20px 0;">
+                            <a href="#" class="green-button">
+                                <i class="fas fa-arrow-right"></i>
+                                Get Started
+                            </a>
+                            <a href="#" class="green-button">
+                                <i class="fas fa-play"></i>
+                                Play Demo
+                            </a>
+                            <a href="#" class="green-button">
+                                <i class="fas fa-external-link-alt"></i>
+                                Learn More
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Badges Section -->
+                    <section id="badges" class="demo-section">
+                        <h2 class="demo-title">Badge Components</h2>
+                        
+                        <h3>Status Badges</h3>
+                        <div style="margin: 20px 0;">
+                            <span class="badge badge-primary">Primary</span>
+                            <span class="badge badge-secondary">Secondary</span>
+                            <span class="badge badge-warning">Warning</span>
+                            <span class="badge badge-danger">Danger</span>
+                        </div>
+
+                        <h3>Classification Badges</h3>
+                        <div style="margin: 20px 0;">
+                            <span class="classification-public">Public</span>
+                            <span class="classification-internal">Internal</span>
+                            <span class="classification-confidential">Confidential</span>
+                            <span class="classification-secret">Secret</span>
+                        </div>
+
+                        <h3>Severity Indicators</h3>
+                        <div style="margin: 20px 0;">
+                            <span class="incident-severity severity-low">Low</span>
+                            <span class="incident-severity severity-medium">Medium</span>
+                            <span class="incident-severity severity-high">High</span>
+                            <span class="incident-severity severity-critical">Critical</span>
+                        </div>
+                    </section>
+
+                    <!-- Grid System Section -->
+                    <section id="grid" class="demo-section">
+                        <h2 class="demo-title">Grid System</h2>
+                        
+                        <h3>Responsive Grid</h3>
+                        <div class="responsive-grid">
+                            <div class="grid-item">
+                                <div class="grid-item-content">
+                                    <div class="grid-item-icon">
+                                        <i class="fas fa-cube"></i>
+                                    </div>
+                                    <h4 class="grid-item-title">Grid Item 1</h4>
+                                    <p class="grid-item-description">Responsive grid item that adapts to screen size.</p>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="grid-item-content">
+                                    <div class="grid-item-icon">
+                                        <i class="fas fa-cogs"></i>
+                                    </div>
+                                    <h4 class="grid-item-title">Grid Item 2</h4>
+                                    <p class="grid-item-description">Automatic sizing with minimum width constraints.</p>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="grid-item-content">
+                                    <div class="grid-item-icon">
+                                        <i class="fas fa-magic"></i>
+                                    </div>
+                                    <h4 class="grid-item-title">Grid Item 3</h4>
+                                    <p class="grid-item-description">Perfect for feature showcases and galleries.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Flexible Layout</h3>
+                        <div class="responsive-flex">
+                            <div class="responsive-flex-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4>Flex Item 1</h4>
+                                        <p>Flexible layout system that wraps content nicely.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="responsive-flex-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4>Flex Item 2</h4>
+                                        <p>Equal width distribution with gap spacing.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Typography Section -->
+                    <section id="typography" class="demo-section">
+                        <h2 class="demo-title">Typography</h2>
+                        
+                        <h1 class="welcome-title">Welcome Title Style</h1>
+                        <p class="intro-text">Introduction text with optimal spacing and readability. Perfect for hero sections and important announcements.</p>
+                        
+                        <div class="divider"></div>
+
+                        <h2 class="section-title">Section Title</h2>
+                        <p>Regular paragraph text with comfortable line height and professional appearance. The typography system ensures consistent spacing and hierarchy throughout your content.</p>
+
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Feature list with icons</li>
+                            <li><i class="fas fa-star"></i> Professional styling</li>
+                            <li><i class="fas fa-heart"></i> Easy to customize</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="menu-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <script>
+        // Sidebar functionality
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.sidebar-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                        
+                        // Close sidebar on mobile after navigation
+                        if (window.innerWidth <= 768) {
+                            document.querySelector('.sidebar').classList.remove('active');
+                        }
+                    }
+                }
+            });
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const sidebar = document.querySelector('.sidebar');
+            const toggle = document.querySelector('.menu-toggle');
+            
+            if (window.innerWidth <= 768 && 
+                !sidebar.contains(event.target) && 
+                !toggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
